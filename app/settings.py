@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'regional',
     'libro',
     'autenticacion',
+    'dashboard',
 ]
 
 MIDDLEWARE_CLASSES = [

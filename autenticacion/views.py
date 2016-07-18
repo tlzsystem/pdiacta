@@ -16,7 +16,8 @@ def log_in(request):
 			if acceso is not None:
 				if acceso.is_active:
 					login(request, acceso)
-					return HttpResponseRedirect(reverse('dashboard:index'))
+					return HttpResponseRedirect(reverse('dashboard:dashboard'))
+					#return render(request, 'dashboard/dashboard.html')
 				else:
 					return HttpResponse("Usuario no activo")
 			else:
