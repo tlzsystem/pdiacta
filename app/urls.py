@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from autenticacion import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('autenticacion.urls')),
-    url(r'^sitio/', include('frontal.urls')),
+    url(r'^sitio/', include('frontal.urls', namespace='sitio')),
     url(r'^dashboard/', include('dashboard.urls', namespace='dashboard')),
-    url(r'^clientes/', include('cliente.urls', namespace='clientes')),
+    url(r'^dashboard/clientes/', include('cliente.urls', namespace='clientes')),
+    url(r'^dashboard/compradores/', include('comprador.urls', namespace='compradores')),
+    url(r'^login/', views.log_in),
+    url(r'^logout/', views.log_out),
+    url(r'', views.tositio),
 ]

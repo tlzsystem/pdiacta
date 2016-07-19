@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
-{% block title %}Clientes{% endblock %}
+{% block title %}Compradores{% endblock %}
 
 {% block content %}
-<h3>Listado de Clientes</h3>
-
-
+<h3>Listado de Compradores</h3>
 
 
 <div class ="table-responsive">
@@ -21,20 +19,20 @@
         	<th>Telefono</th>
       	</tr>
 		<tbody>
-			{% for cliente in clientes %} 
+			{% for cliente in clientes %}
 
 
 			<tr>
 			<td><a href="{% url 'clientes:byid' cliente.id %}">{{ cliente.id }}</a>  </td>
-			<td>{{ cliente.nombres }}</td> 
-			<td>{{ cliente.apellido_paterno }}</td> 
-			<td>{{ cliente.apellido_materno }}</td> 
-			<td>{{ cliente.identificacion }}</td> 
-			<td>{{ cliente.direccion }}</td> 
-			<td>{{ cliente.comuna }}</td>  
-			<td>{{ cliente.telefono }}</td> 
+			<td>{{ cliente.nombres }}</td>
+			<td>{{ cliente.apellido_paterno }}</td>
+			<td>{{ cliente.apellido_materno }}</td>
+			<td>{{ cliente.identificacion }}</td>
+			<td>{{ cliente.direccion }}</td>
+			<td>{{ cliente.comuna }}</td>
+			<td>{{ cliente.telefono }}</td>
 			</tr>
-			{% endfor %} 
+			{% endfor %}
 
 		</tbody>
 	</table>
