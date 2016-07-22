@@ -2,16 +2,24 @@
 {% block title %}Clientes{% endblock %}
 
 {% block content %}
-<h3>Listado de Clientes</h3>
+<section class="container">
+	<h3>Listado de Clientes</h3>
+</section>
 
 
+<section class="container">
+	<div class="pull-right">
+		<button type="button" class="btn btn-default">Nuevo Cliente</button>
+	</div>
 
+</section>
+<br>
+<section class="container">
 
 <div class ="table-responsive">
 	<table class="table table-condensed table-hover">
   	  <thead>
       	<tr>
-        	<th>id</th>
         	<th>Nombres</th>
         	<th>Paterno</th>
         	<th>Materno</th>
@@ -19,25 +27,26 @@
         	<th>Direccion</th>
         	<th>Comuna</th>
         	<th>Telefono</th>
+			<th></th>
+			<th></th>
       	</tr>
 		<tbody>
-			{% for cliente in clientes %} 
-
-
+			{% for cliente in clientes %}
 			<tr>
-			<td><a href="{% url 'clientes:byid' cliente.id %}">{{ cliente.id }}</a>  </td>
 			<td>{{ cliente.nombres }}</td> 
 			<td>{{ cliente.apellido_paterno }}</td> 
 			<td>{{ cliente.apellido_materno }}</td> 
 			<td>{{ cliente.identificacion }}</td> 
 			<td>{{ cliente.direccion }}</td> 
 			<td>{{ cliente.comuna }}</td>  
-			<td>{{ cliente.telefono }}</td> 
+			<td>{{ cliente.telefono }}</td>
+			<td><a href="{% url 'clientes:byid' cliente.id %}"><i class="glyphicon glyphicon-pencil"></i></a>  </td>
+			<td><a href="{% url 'clientes:byid' cliente.id %}"> <i class="glyphicon glyphicon-trash"></i></a></td>
 			</tr>
 			{% endfor %} 
 
 		</tbody>
 	</table>
 </div>
-
+</section>
 {% endblock %}

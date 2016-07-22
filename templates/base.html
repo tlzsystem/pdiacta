@@ -12,8 +12,7 @@
 <section class="container">
 	<header class="row">
 		<div class="col-lg-12">
-	{%block logo%}{%endblock%}
-
+			<img class="margin-top-bottom" src="{% static "img/logo_pagina.png" %}"alt="Logo">
 			<ul class="nav nav-pills pull-right">
 				<li>
 					<a href="#">
@@ -54,11 +53,11 @@
 		</div>
 	</header>
 </section>
-<section class="container">
+
 
 	 {% block content %}{% endblock %}
 
-</section>
+
 
 	
 
@@ -71,6 +70,6 @@
     </footer>
 
 <script src="{% static "jquery/jquery.min.js" %}"></script>
-<script src="{% static "bootsrap/js/bootstrap.min.js" %}"></script>
+<script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
 </body>
 </html>
