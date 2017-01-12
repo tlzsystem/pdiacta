@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block title %}Nuevo Cliente{% endblock %}
+
+
+
+{% block content %}
+<section class="container">
+	<h3>Nuevo cliente</h3>
+</section>
+
+<section class="container">
+
+
+     <form name="formulario" action="" method="POST" role="form" >{% csrf_token %}
+
+
+         <div class="form-horizontal">
+
+             <div class="form-group">
+                <label class="col-lg-2" for="id_identificacion">Identificación:</label>
+                <div class="col-lg-4">
+                   {{ form.identificacion }}
+                </div>
+
+             </div>
+
+            <div class="form-group">
+                <label class="col-lg-2" for="id_nombres">Nombres:</label>
+                <div class="col-lg-4">
+                     {{ form.nombres }}
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-lg-2" for="id_apellido_paterno">Apellido Paterno:</label>
+                <div class="col-lg-4">
+                     {{ form.apellido_paterno }}
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-lg-2" for="id_apellido_materno">Apellido Materno:</label>
+                <div class="col-lg-4">
+                    {{ form.apellido_materno }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-lg-2" for="id_direccion">Dirección:</label>
+                <div class="col-lg-4">
+                   {{ form.direccion}}
+                </div>
+
+            </div>
+
+             <div class="form-group">
+                <label class="col-lg-2" for="id_telefono">Teléfono:</label>
+                <div class="col-lg-4">
+                  {{ form.telefono }}
+                </div>
+
+            </div>
+
+             <div class="form-group">
+                 <label class="col-lg-2" for="regiones">Región:</label>
+                 <div class="col-lg-4">
+                     <select class="form-control" name="regiones" id="regiones"
+                        {% for region in regiones %}
+                        <option value="{{ region.id }}"> {{ region.nombre_region }}</option>
+                    {% endfor %}
+                    </select>
+                 </div>
+            </div>
+
+             <div class="form-group">
+                 <label class="col-lg-2" for="provincia">Provincia:</label>
+                 <div class="col-lg-4">
+                     <select class="form-control" name="provincia" id="provincia">
+                    </select>
+                 </div>
+            </div>
+             <div class="form-group">
+                 <label class="col-lg-2" for="id_comuna">Comuna:</label>
+                 <div class="col-lg-4">
+                     <select class="form-control" name="comuna" {{ form.comuna }}
+                    </select>
+                 </div>
+            </div>
+
+
+             <button type="submit" class="btn btn-default">Agregar</button>
+        </div>
+
+     </form>
+
+
+
+
+</section>
+
+{% endblock %}
+

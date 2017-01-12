@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^dashboard/', include('dashboard.urls', namespace='dashboard')),
     url(r'^dashboard/clientes/', include('cliente.urls', namespace='clientes')),
     url(r'^dashboard/compradores/', include('comprador.urls', namespace='compradores')),
+    url(r'^regional/', include('regional.urls', namespace='regional')),
     url(r'^login/', views.log_in),
     url(r'^logout/', views.log_out),
     url(r'', views.tositio),
